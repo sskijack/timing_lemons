@@ -8,7 +8,7 @@ class TimingsController < ApplicationController
     if ENV['MEMCACHIER_SERVERS'] && cache && cached_result = cache.get('result')
       render json: cached_result
     else
-      result = Net::HTTP.get(URI("#{ENV['FEED_URL']}?_=#{params[:id]}"))
+      result = Net::HTTP.get(URI("#{ENV['https://storage.googleapis.com/fiawec-prod/assets/live/WEC/__data.json']}?_=#{params[:id]}"))
       load_cache(result)
       render json: result
     end
